@@ -28,7 +28,7 @@ Variables can be shadowed in local scope with the `let` syntax. It can also be s
 
 * Pointfree notation is writing code without arguments:
 
-```
+```haskell
 let addOne = (+1)
 ```
 

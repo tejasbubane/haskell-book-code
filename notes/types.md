@@ -16,9 +16,9 @@
 * Arrow (->) is a type constructor for functions that takes two type arguments -
   input type and result type of the function.
 
-    ```
-    data (->) a b
-    ```
+```haskell
+data (->) a b
+```
 
 `a` is input type, `b` is result type.
 
@@ -27,9 +27,9 @@
 * Type variables in type constructors - the more constraints they have -
   more the functionality - the less constraints they have - lesser the functionality:
 
-  ```
-  id :: a -> a
-  ```
+```haskell
+id :: a -> a
+```
 
   No type constraint on this identity function, can take any value - has no functionality.
   Since we have zero info about type, we cannot do anything with it.
