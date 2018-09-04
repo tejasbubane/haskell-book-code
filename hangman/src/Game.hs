@@ -30,14 +30,21 @@ renderPuzzleChar :: Maybe Char -> Char
 renderPuzzleChar Nothing  = '_'
 renderPuzzleChar (Just s) =  s
 
+-- success case - don't count guess
 fillInCharacter :: Puzzle -> Char -> Puzzle
 fillInCharacter (Puzzle word filledInSoFar s) c =
-  Puzzle word newFilledInSoFar (c:s)
+  Puzzle word newFilledInSoFar s
   where zipper guessed wordChar guessChar =
           if wordChar == guessed
           then Just wordChar
           else guessChar
         newFilledInSoFar = zipWith (zipper c) word filledInSoFar
+
+-- failure case - count the guess
+countGuess :: Puzzle -> Char -> Puzzle
+countGuess (Puzzle word filledInSoFar s) c =
+  Puzzle word filledInSoFar (c:s)
+
 
 handleGuess :: Puzzle -> Char -> IO Puzzle
 handleGuess puzzle guess = do
@@ -55,7 +62,7 @@ handleGuess puzzle guess = do
     (False, _) -> do
       putStrLn "This character wasn't in\
                \ the word, try again."
-      return (fillInCharacter puzzle guess) -- fill in already guessed list
+      return (countGuess puzzle guess)
 
 gameOver :: Puzzle -> IO ()
 gameOver (Puzzle wordToGuess _ guessed) =
