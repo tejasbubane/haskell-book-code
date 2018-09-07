@@ -14,8 +14,8 @@
   - [Notes](notes/06-typeclasses.md)
 
 * Functional Patterns:
-  - [Code](code/07-functional_patterns.hs)
-  - [Notes](notes/07-functional_patterns.md)
+  - [Code](code/07-functional-patterns.hs)
+  - [Notes](notes/07-functional-patterns.md)
 
 * Recursion:
   - [Code](code/08-recursion.hs)
