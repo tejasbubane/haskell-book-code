@@ -15,6 +15,7 @@ library
                  , Identity
                  , Pair
                  , Sum
+                 , Exercises
   ghc-options: -Wall -fwarn-tabs
   build-depends: base >=4.7 && <5
                , hspec
