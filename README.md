@@ -47,3 +47,7 @@
   - [Sample Tests](testing)
   - [Morse-code converter](morse)
   - [Exercises](testing/Exercises.hs)
+
+* Monoids and Semigroups:
+  - [Code](code/15-monoids-semigroups.hs)
+  - [Notes](notes/15-monoids-semigroups.hs)
