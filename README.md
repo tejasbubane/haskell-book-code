@@ -50,4 +50,8 @@
 
 * Monoids and Semigroups:
   - [Code](code/15-monoids-semigroups.hs)
-  - [Notes](notes/15-monoids-semigroups.hs)
+  - [Notes](notes/15-monoids-semigroups.md)
+
+* Functors:
+  - [Code](code/16-functors.hs)
+  - [Notes](notes/16-functors.md)
