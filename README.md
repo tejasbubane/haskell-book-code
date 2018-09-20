@@ -1,5 +1,31 @@
 # Haskell Book Code
 
+Code and notes from reading [Haskell Book](http://haskellbook.com/) -
+including all exercises.
+
+#### Requirements:
+
+For running some examples, you might need `Hspec`, `QuickCheck` and `checkers`
+installed globally. Can be installed via `cabal`:
+
+```sh
+cabal install hspec QuickCheck checkers
+```
+
+#### Usage:
+
+Files from [`/code`](code/) can be run by loading each file in `ghci` and
+trying out the functions or running `main` for tests.
+
+Other directories (excluding `notes`) are `cabal/stack` projects and hence:
+
+```sh
+stack build
+stack test
+```
+
+#### Contents:
+
 * Introduction:
   - [Code](code/01-hello.hs)
 
