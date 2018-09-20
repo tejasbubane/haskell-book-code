@@ -55,3 +55,8 @@
 * Functors:
   - [Code](code/16-functors.hs)
   - [Notes](notes/16-functors.md)
+
+* Applicatives:
+  - [Code](code/17-applicatives.hs)
+  - [QuickBatch Intro](code/17b-quickbatch.hs)
+  - [Notes](notes/17-applicatives.md)
