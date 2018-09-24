@@ -86,3 +86,7 @@ stack test
   - [Code](code/17-applicatives.hs)
   - [QuickBatch Intro](code/17b-quickbatch.hs)
   - [Notes](notes/17-applicatives.md)
+
+* Monads:
+  - [Code](code/18-monads.hs)
+  - [Notes](notes/18-monads.md)
