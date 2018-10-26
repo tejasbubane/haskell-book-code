@@ -3,7 +3,8 @@
 Video links:
 
 [1] Part 1: The builup - https://www.youtube.com/watch?v=PlFgKV0ZXoE
-[2] Part 2: https://www.youtube.com/watch?v=UtNB30Na65g
+[2] Part 2: Defining Monads - https://www.youtube.com/watch?v=UtNB30Na65g
+[3] Part 3: Curious case of IO Monad - https://www.youtube.com/watch?v=h6zbQ23U05g
 
 
 #### Side effects:
@@ -218,3 +219,49 @@ safeSqrtRec ma = do
 
 * We now have a way to code without considering error scenarios (or side-effects)
   since that is abstracted away by bind `(<-)`.
+
+#### The State and IO Monads:
+
+```haskell
+main :: IO ()
+main = do
+  putStrLn "What's your name?"
+  name <- getLine
+  putStrLn "Hello " ++ name
+```
+
+`putStrLn` returns `IO ()` which is good in second usage but how does
+the first line sequence?
+
+Using another variant of bind `>>` which just ignores the result of computation
+but interestingly does pass on the state to next function.
+
+```haskell
+(>>) :: ma -> mb -> mb
+ma >> mb = ma >>= \_ -> mb
+```
+
+_Warning: Mind bending stuff ahead_
+
+```haskell
+s -> (a, s) -- State monad needs to be "run"
+runState initState (State s a) = State s' a
+```
+
+* IO and pure functions are contradictory. But a nicely implemented in Haskell
+  (using `State` monad internally).
+
+* Note the above function is still pure - given a state it will always return
+  another state with changes.
+
+* But in `real world` there are infinite state possibilities. But haskell is lazy!
+  So it keeps passing **ALL** possible states as `RealWorld` and keeps changing them
+  as per the sequenced monadic operations. **!!Mind blown!!**
+
+* Even though in `do` notation it looks like we get the value out of monad
+  with `<-`, it is actually not so. We merely write functions to operate on data
+  encapsulated in monads one after the other, pass it on to runtime from `main`
+  which runs them and performs all the side-effecty operations.
+
+* Our code remains pure while the haskell runtime does all the dirty job of
+  actually performing the IO actions.
