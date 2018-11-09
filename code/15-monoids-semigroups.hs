@@ -352,6 +352,15 @@ instance Monoid (Comp a) where
 
 -- 8. Skipped
 
+-- Or exercise from Semigroups - out of curiosity after reading
+-- https://www.reddit.com/r/HaskellBook/comments/9ro03v/c15_exercise_monoid_for_or_type/
+-- mempty should hold left and right identity properties
+-- mempty <> x = x
+-- x <> mempty = x
+-- looking at the definition of (<>) above it is clear that mempty should be Fst
+instance (Monoid a, Monoid b) => Monoid (Or a b) where
+  mempty = Fst mempty
+
 -- Main
 
 main :: IO ()
@@ -389,3 +398,5 @@ main = do
   quickCheck (prop_rightIdentity :: BoolConj -> Bool)
   quickCheck (prop_leftIdentity :: BoolDisj -> Bool)
   quickCheck (prop_rightIdentity :: BoolDisj -> Bool)
+  quickCheck (prop_leftIdentity :: Or (Product Int) String -> Bool)
+  quickCheck (prop_rightIdentity :: Or (Product Int) String -> Bool)
