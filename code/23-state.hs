@@ -42,6 +42,8 @@ rollDie = state $ do
 rollDie' :: State StdGen Die
 rollDie' =
   intToDie <$> state (randomR (1, 6))
+-- State StdGen has final type argument as Int. We lifted Int -> Die over it
+-- and transformed the lasy argument to Die.
 
 rollDieThreeTimes' :: State StdGen (Die, Die, Die)
 rollDieThreeTimes' =
@@ -111,7 +113,7 @@ instance Semigroup s => Monad (Moi s) where
         -> (a -> Moi s b)
         -> Moi s b
   (Moi sa) >>= g = Moi $ \s -> let (a, s') = sa s
-                               in runMoi (g a) s
+                               in runMoi (g a) s'
 
 -- Fizzbuzz differently
 -- using state just for fun
