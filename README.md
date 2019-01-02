@@ -5,88 +5,23 @@ including all exercises.
 
 #### Requirements:
 
-For running some examples, you might need `Hspec`, `QuickCheck` and `checkers`
+For running some examples, you might need `Hspec`, `QuickCheck`, `checkers`, etc.
 installed globally. Can be installed via `cabal`:
 
 ```sh
-cabal install hspec QuickCheck checkers
+cabal install hspec QuickCheck checkers scotty
 ```
 
 #### Usage:
 
-Files from [`/code`](code/) can be run by loading each file in `ghci` and
-trying out the functions or running `main` for tests.
+Each chapter has a directory with all related files in it - one or more code files with exercise solutions and a `README` file with notes taken while reading the book.
 
-Other directories (excluding `notes`) are `cabal/stack` projects and hence:
+All files can be run by loading each file in `ghci` and
+tried out the functions or running `main` for tests. Directories inside any chapter
+are `cabal/stack` projects and hence the usual stack commands:
 
 ```sh
 stack build
 stack test
+stack ghci
 ```
-
-#### Contents:
-
-* Introduction:
-  - [Code](code/01-hello.hs)
-
-* Types:
-  - [Code](code/05-types.hs)
-  - [Notes](notes/05-types.md)
-
-* TypeClasses:
-  - [Code (Instances)](code/061-typeclasses-instances.hs)
-  - [Code (Eq)](code/062-typeclasses-eq.hs)
-  - [Code (Ord)](code/063-typeclasses-ord.hs)
-  - [Notes](notes/06-typeclasses.md)
-
-* Functional Patterns:
-  - [Code](code/07-functional-patterns.hs)
-  - [Notes](notes/07-functional-patterns.md)
-
-* Recursion:
-  - [Code](code/08-recursion.hs)
-  - [Notes](notes/08-recursion.md)
-
-* Lists:
-  - [Code](code/09-lists.hs)
-  - [Notes](notes/09-lists.md)
-
-* Fold:
-  - [Code](code/10-fold.hs)
-  - [Notes](notes/10-fold.md)
-
-* Algebraic DataTypes:
-  - [Code](code/11-algebraic-datatypes.hs)
-  - [Notes](notes/11-algebraic-datatypes.md)
-
-* Singaling Adversity:
-  - [Code](code/12-signaling-adversity.hs)
-  - [Notes](notes/12-signaling-adversity.md)
-
-* Building Projects:
-  - [Code](code/13-building-projects.hs)
-  - [Hello-word project](hello)
-  - [Hangman project](hangman)
-  - [Notes](notes/13-building-projects.md)
-
-* Testing:
-  - [Sample Tests](testing)
-  - [Morse-code converter](morse)
-  - [Exercises](testing/Exercises.hs)
-
-* Monoids and Semigroups:
-  - [Code](code/15-monoids-semigroups.hs)
-  - [Notes](notes/15-monoids-semigroups.md)
-
-* Functors:
-  - [Code](code/16-functors.hs)
-  - [Notes](notes/16-functors.md)
-
-* Applicatives:
-  - [Code](code/17-applicatives.hs)
-  - [QuickBatch Intro](code/17b-quickbatch.hs)
-  - [Notes](notes/17-applicatives.md)
-
-* Monads:
-  - [Code](code/18-monads.hs)
-  - [Notes](notes/18-monads.md)
