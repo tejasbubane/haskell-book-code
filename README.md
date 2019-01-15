@@ -9,7 +9,7 @@ For running some examples, you might need `Hspec`, `QuickCheck`, `checkers`, etc
 installed globally. Can be installed via `cabal`:
 
 ```sh
-cabal install hspec QuickCheck checkers scotty
+cabal install hspec QuickCheck checkers scotty criterion containers vector
 ```
 
 #### Usage:
