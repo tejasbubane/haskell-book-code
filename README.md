@@ -1,7 +1,11 @@
-# Haskell Book Code
+# Haskell Book Code [Complete]
 
-Code and notes from reading [Haskell Book](http://haskellbook.com/) -
-including all exercises.
+This is fairly `complete` code and notes from reading
+[Haskell Book](http://haskellbook.com/) - including all exercises.
+
+_(Apart from a couple exercises in monad transformers which I found too hard to digest)_
+
+This is my first Haskell learning experience so there might be some errors, please point them out. I will be more than happy to be corrected. Thanks!
 
 #### Requirements:
 
